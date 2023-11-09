@@ -1,0 +1,70 @@
+/* Reset some default styles to ensure consistency across browsers */
+body, h1, form, label, input, button, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color to the entire page */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+h1 {
+    text-align: center;
+    font-size: 2em;
+    padding: 20px 0;
+}
+
+/* Style the form */
+form {
+    text-align: center;
+    background-color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the form label */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Style the input field */
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the submit button */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the result paragraph */
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Style for when the result is a win */
+p.win {
+    color: green;
+}
+
+/* Style for when the result is a try again */
+p.try-again {
+    color: red;
+}
