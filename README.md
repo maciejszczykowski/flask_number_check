@@ -7,4 +7,4 @@ Project name/static/css/style.css
 Project name/templates/index.html
 Project name/app.py
 
-VSC/Python/Flask/Html/Css/Postrgrsql/Git
+VSC/Python/Flask/Html/Css/Postrgrsql/Git/
