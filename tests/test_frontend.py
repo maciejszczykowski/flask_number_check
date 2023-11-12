@@ -32,7 +32,7 @@ try:
     check_button.click()
 
     # Use WebDriverWait to wait for the "Congratulations" message to be present
-    WebDriverWait(driver, 20).until(
+    WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, "//p[contains(text(), 'Congratulations')]"))
     )
 
