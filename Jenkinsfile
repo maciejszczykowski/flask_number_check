@@ -39,4 +39,14 @@ pipeline {
             }
         }
 
-       
+        stage('Test') {
+            steps {
+                script {
+                    echo 'Current Directory: ' + pwd()
+                    echo 'Python Path: ' + sh(script: 'echo $PYTHONPATH', returnStdout: true).trim()
+                    sh 'ls -R' // Print directory structure for debugging
+                    sh 'pytest'
+                }
+            }
+        }
+    }
