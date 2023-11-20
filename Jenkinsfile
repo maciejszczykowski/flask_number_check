@@ -21,7 +21,17 @@ pipeline {
                 }
             }
         }
-
+stage('Install Dependencies') {
+    steps {
+        script {
+            if (isUnix()) {
+                sh 'pip install -r requirements.txt'
+            } else {
+                bat 'pip install -r requirements.txt'
+            }
+        }
+    }
+}
         stage('Checkout') {
             steps {
                 checkout scm
