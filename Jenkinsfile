@@ -39,25 +39,4 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    echo 'Current Directory: ' + pwd()
-                    echo 'Python Path: ' + sh(script: 'echo $PYTHONPATH', returnStdout: true).trim()
-                    sh 'ls -R' // Print directory structure for debugging
-                    sh 'pytest'
-                }
-            }
-        }
-    }
-
-    post {
-        always {
-            echo 'This will always run'
-        }
-        success {
-            echo 'This will run only if the build and tests are successful'
-            // You can trigger deployment or other actions here
-        }
-    }
-}
+       
