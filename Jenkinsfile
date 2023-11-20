@@ -51,27 +51,3 @@ stage('Install Dependencies') {
 }
 
 
-        stage('Test') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        sh 'pytest'
-                    } else {
-                        bat '$env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
-pytest'
-                    }
-                }
-            }
-        }
-    }
-
-    post {
-        always {
-            echo 'This will always run'
-        }
-        success {
-            echo 'This will run only if the build and tests are successful'
-            // You can trigger deployment or other actions here
-        }
-    }
-}
