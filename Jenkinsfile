@@ -5,33 +5,23 @@ pipeline {
         stage('Check Environment') {
             steps {
                 script {
-                    if (isUnix()) {
-                        sh 'echo "Running on Unix-like OS"'
-                        sh 'echo "Python Version: $(python --version)"'
-                        sh 'echo "Pip Version: $(pip --version)"'
-                        sh 'echo "Flask Version: $(flask --version)"'
-                        // Add more commands for other dependencies as needed
-                    } else {
-                        echo 'Running on Windows OS'
-                        bat 'python --version'
-                        bat 'pip --version'
-                        bat 'flask --version'
-                        // Add more commands for other dependencies as needed
-                    }
+                    echo 'Running on Windows OS'
+                    bat 'python --version'
+                    bat 'pip --version'
+                    bat 'flask --version'
+                    // Add more commands for other dependencies as needed
                 }
             }
         }
-stage('Install Dependencies') {
-    steps {
-        script {
-            if (isUnix()) {
-                sh 'pip install -r requirements.txt'
-            } else {
-                bat 'pip install -r requirements.txt'
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    bat 'pip install -r requirements.txt'
+                }
             }
         }
-    }
-}
+
         stage('Checkout') {
             steps {
                 checkout scm
@@ -39,27 +29,17 @@ stage('Install Dependencies') {
         }
 
         stage('Build') {
-    steps {
-        script {
-            if (isUnix()) {
-                sh 'nohup python app.py &'
-            } else {
-                bat 'start python app.py'
+            steps {
+                script {
+                    bat 'start python app.py'
+                }
             }
         }
-    }
-}
-
 
         stage('Test') {
             steps {
                 script {
-                    if (isUnix()) {
-                        sh 'pytest'
-                    } else {
-                        bat '$env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
-pytest'
-                    }
+                    bat '$env:PYTHONPATH = "C:\\Users\\macie\\Desktop\\Maciek\\Dev\\Lotto" pytest'
                 }
             }
         }
