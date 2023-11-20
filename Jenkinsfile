@@ -37,10 +37,10 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                script {
-                    bat '$env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
-pytestst'
+    steps {
+        dir('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Lottery pipeline') {
+            script {
+                    bat '\'$env:PYTHONPATH="C:\\Users\\macie\\Desktop\\Maciek\\Dev\\Lotto"\' pytest'
                 }
             }
         }
