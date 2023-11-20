@@ -39,7 +39,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    bat 'pytest'
+                    bat '$env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
+pytestst'
                 }
             }
         }
