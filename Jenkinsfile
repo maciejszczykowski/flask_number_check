@@ -29,16 +29,17 @@ pipeline {
         }
 
         stage('Build') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        sh 'python app.py'
-                    } else {
-                        bat 'python app.py'
-                    }
-                }
+    steps {
+        script {
+            if (isUnix()) {
+                sh 'nohup python app.py &'
+            } else {
+                bat 'start python app.py'
             }
         }
+    }
+}
+
 
         stage('Test') {
             steps {
