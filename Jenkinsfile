@@ -47,7 +47,8 @@ pipeline {
                     if (isUnix()) {
                         sh 'pytest'
                     } else {
-                        bat 'pytest'
+                        bat '$env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
+pytest'
                     }
                 }
             }
