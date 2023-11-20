@@ -30,13 +30,25 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'python app.py'
+                script {
+                    if (isUnix()) {
+                        sh 'python app.py'
+                    } else {
+                        bat 'python app.py'
+                    }
+                }
             }
         }
 
         stage('Test') {
             steps {
-                sh 'pytest'
+                script {
+                    if (isUnix()) {
+                        sh 'pytest'
+                    } else {
+                        bat 'pytest'
+                    }
+                }
             }
         }
     }
