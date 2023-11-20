@@ -1,21 +1,24 @@
 pipeline {
     agent any
 
-    stage('Check Environment') {
-    steps {
-        script {
-            if (isUnix()) {
-                sh 'echo "Running on Unix-like OS"'
-                sh 'echo "Python Version: $(python --version)"'
-                sh 'echo "Pip Version: $(pip --version)"'
-                sh 'echo "Flask Version: $(flask --version)"'
-                // Add more commands for other dependencies as needed
-            } else {
-                echo 'Running on Windows OS'
-                bat 'python --version'
-                bat 'pip --version'
-                bat 'flask --version'
-                // Add more commands for other dependencies as needed
+    stages {
+        stage('Check Environment') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'echo "Running on Unix-like OS"'
+                        sh 'echo "Python Version: $(python --version)"'
+                        sh 'echo "Pip Version: $(pip --version)"'
+                        sh 'echo "Flask Version: $(flask --version)"'
+                        // Add more commands for other dependencies as needed
+                    } else {
+                        echo 'Running on Windows OS'
+                        bat 'python --version'
+                        bat 'pip --version'
+                        bat 'flask --version'
+                        // Add more commands for other dependencies as needed
+                    }
+                }
             }
         }
 
