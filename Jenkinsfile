@@ -9,6 +9,7 @@ pipeline {
                     bat 'python --version'
                     bat 'pip --version'
                     bat 'flask --version'
+                    bat 'pytest --version'
                     // Add more commands for other dependencies as needed
                 }
             }
@@ -18,6 +19,7 @@ pipeline {
             steps {
                 script {
                     bat 'pip install -r requirements.txt'
+                    bat 'pip install pytest'
                 }
             }
         }
