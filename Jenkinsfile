@@ -5,11 +5,13 @@ pipeline {
         stage('Check Environment') {
             steps {
                 script {
-                    echo 'Running on Windows OS'
-                    bat 'python --version'
-                    bat 'pip --version'
-                    bat 'flask --version'
-                    bat 'pytest --version'
+                    if (isUnix()) {
+                        // Update this path accordingly for Unix systems
+                        sh 'export PYTHONPATH=/C/Users/macie/Desktop/Maciek/Dev/Lotto:$PYTHONPATH'
+                    } else {
+                        // Update this path accordingly for Windows systems
+                        bat '$env:PYTHONPATH="C:\\Users\\macie\\Desktop\\Maciek\\Dev\\Lotto";' + $env:PYTHONPATH
+                    }
                     // Add more commands for other dependencies as needed
                 }
             }
@@ -19,7 +21,6 @@ pipeline {
             steps {
                 script {
                     bat 'pip install -r requirements.txt'
-                    bat 'pip install pytest'
                 }
             }
         }
@@ -39,10 +40,12 @@ pipeline {
         }
 
         stage('Test') {
-    steps {
-        dir('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Lottery pipeline') {
-            script {
-                    bat '\'$env:PYTHONPATH="C:\\Users\\macie\\Desktop\\Maciek\\Dev\\Lotto"\' pytest'
+            steps {
+                script {
+                    echo 'Current Directory: ' + pwd()
+                    echo 'Python Path: ' + sh(script: 'echo $PYTHONPATH', returnStdout: true).trim()
+                    sh 'ls -R' // Print directory structure for debugging
+                    sh 'pytest'
                 }
             }
         }
