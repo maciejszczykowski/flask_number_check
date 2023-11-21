@@ -21,6 +21,7 @@ pipeline {
             steps {
                 script {
                     // Print directory structure for debugging
+                    bat 'dir'
                     bat 'dir Lotto\\flask_number_check\\tests'
                 }
             }
