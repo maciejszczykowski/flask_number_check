@@ -16,4 +16,4 @@ To run unit tests (Pytest): $env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev
 pytest
 
 To run virtual environment use: .\venv\Scripts\Activate
-After finishing: deactivate
+After finishing: deactivate..
