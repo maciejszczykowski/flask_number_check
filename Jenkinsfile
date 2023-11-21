@@ -22,6 +22,8 @@ pipeline {
                 script {
                     // Run the Flask application
                     bat 'python app.py'
+                    // Sleep for 30 seconds (adjust as needed)
+                    bat 'timeout /nobreak /t 10 > nul'
                 }
             }
         }
