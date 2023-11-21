@@ -28,10 +28,10 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                script {
-                    // Run pytest unit tests
-                    bat 'pytest Lotto\\flask_number_check\\tests\\test_app.py'
+    steps {
+        script {
+            // Run pytest unit tests
+            bat 'pytest tests\\test_app.py'
                 }
             }
         }
