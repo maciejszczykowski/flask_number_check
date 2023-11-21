@@ -17,11 +17,20 @@ pipeline {
             }
         }
 
+        stage('Debug') {
+            steps {
+                script {
+                    // Print directory structure for debugging
+                    bat 'dir Lotto\\flask_number_check\\tests'
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 script {
                     // Run pytest unit tests
-                    bat 'pytest Lotto/flask_number_check/tests/test_app.py'
+                    bat 'pytest Lotto\\flask_number_check\\tests\\test_app.py'
                 }
             }
         }
