@@ -19,10 +19,10 @@ pipeline {
 
 
         stage('Test') {
-    steps {
-        script {
-            // Run pytest unit tests
-            bat 'pytest $env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto" '
+            steps {
+                script {
+                    // Set PYTHONPATH and run pytest
+                    bat 'set PYTHONPATH=%WORKSPACE% && pytest tests\\test_app.py'
                 }
             }
         }
