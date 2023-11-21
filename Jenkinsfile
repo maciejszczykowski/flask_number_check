@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/maciejszczykowski/flask_number_check.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: 'https://github.com/maciejszczykowski/flask_number_check.git']]])
             }
         }
 
@@ -20,8 +20,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // Run tests
-                    bat 'pytest flask_number_check/tests'
+                    // Run pytest unit tests
+                    bat 'pytest Lotto/flask_number_check/tests/test_app.py'
                 }
             }
         }
