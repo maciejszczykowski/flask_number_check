@@ -18,19 +18,19 @@ pipeline {
         }
 
         stage('Debug') {
-    steps {
-        script {
-            // Print directory structure for debugging
-            bat 'dir tests'
+            steps {
+                script {
+                    // Print directory structure for debugging
+                    bat 'dir tests'
                 }
             }
         }
 
         stage('Test') {
-    steps {
-        script {
-            // Run pytest unit tests
-            bat 'pytest tests\\test_app.py'
+            steps {
+                script {
+                    // Set PYTHONPATH and run pytest
+                    bat 'set PYTHONPATH=%WORKSPACE% && pytest tests\\test_app.py'
                 }
             }
         }
