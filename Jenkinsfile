@@ -30,7 +30,8 @@ pipeline {
             steps {
                 script {
                     // Set PYTHONPATH and run pytest
-                    bat 'set PYTHONPATH=%WORKSPACE% && pytest tests\test_app.py'
+                    bat '$env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
+pytest'
                 }
             }
         }
