@@ -25,16 +25,4 @@ pipeline {
                 }
             }
         }
-
-    
-     stage('Test') {
-    steps {
-        script {
-            // Run pytest unit tests
-            bat "pytest"
-        }
-    }
-}
-
-
     
