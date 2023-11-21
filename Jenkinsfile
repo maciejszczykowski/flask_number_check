@@ -22,7 +22,7 @@ pipeline {
     steps {
         script {
             // Run pytest unit tests
-            bat 'pytest tests\test_app.py'
+            bat 'pytest C:\Users\macie\Desktop\Maciek\Dev\Lotto\flask_number_check\tests\test_app.py'
                 }
             }
         }
