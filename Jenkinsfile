@@ -17,24 +17,12 @@ pipeline {
             }
         }
 
-        stage('Run Application') {
-            steps {
-                script {
-                    // Run the Flask application
-                    bat 'python app.py'
-                    // Sleep for 30 seconds (adjust as needed)
-                    bat 'timeout /nobreak /t 10 > nul'
-                }
-            }
-        }
+     
 
         stage('Test') {
             steps {
                 script {
-                    // Set PYTHONPATH to include the project directory
-                    bat '$env:PYTHONPATH = "${WORKSPACE}"'
-
-                    // Run pytest unit tests
+            
                     bat 'pytest tests'
                 }
             }
