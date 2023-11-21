@@ -22,8 +22,8 @@ pipeline {
     steps {
         script {
             // Set PYTHONPATH to include the project directory
-            bat '$env:PYTHONPATH = "%WORKSPACE%"'
-            
+            bat 'set PYTHONPATH=%WORKSPACE%'
+
             // Run pytest with the updated Python path
             bat 'pytest tests\\test_app.py'
                 }
