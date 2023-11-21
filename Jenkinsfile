@@ -21,11 +21,8 @@ pipeline {
         stage('Test') {
     steps {
         script {
-            // Set PYTHONPATH to include the project directory
-            bat 'set PYTHONPATH=%WORKSPACE%\\Lotto\\flask_number_check'
-
-            // Run pytest with the updated Python path
-            bat 'pytest tests\test_app.py'
+        
+            bat 'pytest tests\\test_app.py'
                 }
             }
         }
