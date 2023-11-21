@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Run tests
-                    bat 'pytest Lotto/flask_number_check/tests'
+                    bat 'pytest flask_number_check/tests'
                 }
             }
         }
