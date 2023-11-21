@@ -17,11 +17,23 @@ pipeline {
             }
         }
 
+        stage('Run Application') {
+            steps {
+                script {
+                    // Run the Flask application
+                    bat 'python app.py'
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 script {
-                    
-                    bat 'pytest'
+                    // Set PYTHONPATH to include the project directory
+                    bat '$env:PYTHONPATH = "${WORKSPACE}"'
+
+                    // Run pytest unit tests
+                    bat 'pytest tests'
                 }
             }
         }
