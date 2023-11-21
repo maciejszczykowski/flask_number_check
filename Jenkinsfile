@@ -22,7 +22,7 @@ pipeline {
     steps {
         script {
             // Run pytest unit tests
-            bat 'C:\Users\macie\Desktop\Maciek\Dev\Lotto\flask_number_check\tests\test_app.py pytest'
+            bat 'pytest $env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto" '
                 }
             }
         }
