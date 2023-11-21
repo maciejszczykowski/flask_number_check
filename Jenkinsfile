@@ -20,10 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // Set PYTHONPATH to include the project directory
-                    bat 'set PYTHONPATH= C:\Users\macie\Desktop\Maciek\Dev\Lotto'
-
-                    // Run pytest with the updated Python path
+                    
                     bat 'pytest'
                 }
             }
