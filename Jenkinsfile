@@ -18,11 +18,10 @@ pipeline {
         }
 
         stage('Debug') {
-            steps {
-                script {
-                    // Print directory structure for debugging
-                    bat 'dir'
-                    bat 'dir Lotto\\flask_number_check\\tests'
+    steps {
+        script {
+            // Print directory structure for debugging
+            bat 'dir tests'
                 }
             }
         }
