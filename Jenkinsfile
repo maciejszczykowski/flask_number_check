@@ -24,7 +24,7 @@ pipeline {
                     bat 'set PYTHONPATH=%WORKSPACE%'
 
                     // Run pytest with the updated Python path
-                    bat 'pytest tests\\test_app.py'
+                    bat 'pytest'
                 }
             }
         }
