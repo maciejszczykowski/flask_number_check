@@ -17,14 +17,6 @@ pipeline {
             }
         }
 
-        stage('Debug') {
-    steps {
-        script {
-            // Print directory structure for debugging
-            bat 'dir tests'
-                }
-            }
-        }
 
         stage('Test') {
     steps {
