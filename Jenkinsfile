@@ -31,7 +31,7 @@ pipeline {
     steps {
         script {
             // Run pytest unit tests
-            bat "pytest --rootdir=${WORKSPACE} tests"
+            bat "pytest"
         }
     }
 }
