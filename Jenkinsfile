@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Set PYTHONPATH and run pytest
-                    bat 'set PYTHONPATH=%WORKSPACE% && pytest tests\\test_app.py'
+                    bat 'set PYTHONPATH=%WORKSPACE% && pytest tests\test_app.py'
                 }
             }
         }
