@@ -26,14 +26,16 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    // Set PYTHONPATH to include the project directory
-                    bat '$env:PYTHONPATH = "${WORKSPACE}"'
+    
+           stage('Test') {
+    steps {
+        script {
+            // Run pytest unit tests
+            bat 'pytest --rootdir=${WORKSPACE} tests'
+        }
+    }
+}
 
-                    // Run pytest unit tests
-                    bat 'pytest tests'
                 }
             }
         }
