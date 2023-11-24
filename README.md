@@ -17,3 +17,8 @@ pytest
 
 To run virtual environment use: .\venv\Scripts\Activate
 After finishing: deactivate
+
+wszytkie dependencies na virtualnym .venv musza byc
+pytest, python, pluggy, selenium, flask
+aby sprawdzic: pip show selenium
+aby zainstalowac: pip install selenium
