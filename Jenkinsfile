@@ -23,7 +23,8 @@ pipeline {
             steps {
                 script {
             
-                    bat 'pytest tests'
+                    bat '$env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
+pytest'
                 }
             }
         }

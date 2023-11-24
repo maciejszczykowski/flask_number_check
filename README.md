@@ -10,7 +10,7 @@ Lotto/flask_number_check/app.py
 Lotto/flask_number_check/tests/test_444 and test_app.py and test_frontend.py
 Lotto/flask_number_check/drivers/
 
-VSC/Python/Flask/Html/Css/Postrgrsql/Git/Pytest//Selenium/Webdriver/Jenkins/Groovy/ngrok (to create a fafe tunnel from public network to localhost jenkins)
+VSC/Python/Flask/Html/Css/Postrgrsql/Git/Pytest//Selenium/Webdriver/Jenkins/Groovy/
 
 To run unit tests (Pytest): $env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
 pytest
