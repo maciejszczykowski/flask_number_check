@@ -13,13 +13,11 @@ pipeline {
                 script {
                     // Install dependencies
                     bat 'pip install -r requirements.txt'
-                    bat ' pip install pytest'
                 }
             }
         }
 
      
-
         stage('Test') {
             steps {
                 script {
