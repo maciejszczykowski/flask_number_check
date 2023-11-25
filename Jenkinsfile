@@ -8,6 +8,16 @@ pipeline {
             }
         }
 
+        stage('Test Setup') {
+            steps {
+                script {
+                    // Add debugging information
+                    bat 'pip show -v flask_number_check'
+                    bat 'echo %PATH%'
+                }
+            }
+        }
+
         stage('Build') {
             steps {
                 script {
@@ -17,11 +27,10 @@ pipeline {
             }
         }
 
-     
-        stage('Test') {
+        stage('Run Tests') {
             steps {
                 script {
-            
+                    // Run the tests
                     bat 'pytest'
                 }
             }
