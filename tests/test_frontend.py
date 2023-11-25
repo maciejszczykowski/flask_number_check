@@ -19,7 +19,7 @@ try:
     # Navigate to your Flask app
     driver.get("http://127.0.0.1:5000")
 
-    # Use WebDriverWait to wait for the input field to be present
+    # Use WebDriverWait to wait for the input field to be present.
     number_input = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "number"))
     )

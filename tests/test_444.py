@@ -1,4 +1,4 @@
-# Unit test to check if when posted 44444444 to the DB it receives success
+# Unit test to check if when posted 44444444 to the DB it receives success.
 
 import pytest
 from flask_number_check.app import app, check_number_in_db

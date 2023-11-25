@@ -1,4 +1,4 @@
-# Test to check the DB Connection. Function sends a GET request to URL and asserts that the response is code 200.
+# Test to check the DB Connection. Function sends a GET request to URL and asserts that the response is code 200
 
 import pytest
 from flask_number_check.app import app
