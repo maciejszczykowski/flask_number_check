@@ -8,16 +8,6 @@ pipeline {
             }
         }
 
-        stage('Test Setup') {
-            steps {
-                script {
-                    // Install dependencies, including flask_number_check
-            bat 'pip install -r requirements.txt'
-            bat 'pip show -v flask_number_check'
-            bat 'echo %PATH%'
-                }
-            }
-        }
 
         stage('Build') {
             steps {
