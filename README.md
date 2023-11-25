@@ -14,8 +14,8 @@ VSC/Python/Flask/Html/Css/Postrgrsql/Git/Pytest//Selenium/Webdriver/Jenkins/Groo
 
 To run unit tests (Pytest): $env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
 pytest
-
-To run virtual environment use: .\venv\Scripts\Activate
+.\venv\Scripts\Activate
+To run virtual environment use: 
 After finishing: deactivate
 
 wszytkie dependencies na virtualnym .venv musza byc
@@ -23,3 +23,4 @@ pytest, python, pluggy, selenium, flask
 aby sprawdzic: pip show selenium
 aby zainstalowac: pip install selenium
 na .venv dziala ale tez z $env a za 2gim razem juz bez $env
+__init__.py dodac plik aby testy uruchamiac bez $env:...
