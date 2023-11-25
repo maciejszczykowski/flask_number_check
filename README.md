@@ -22,3 +22,4 @@ wszytkie dependencies na virtualnym .venv musza byc
 pytest, python, pluggy, selenium, flask
 aby sprawdzic: pip show selenium
 aby zainstalowac: pip install selenium
+na .venv dziala ale tez z $env a za 2gim razem juz bez $env
