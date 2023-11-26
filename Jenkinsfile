@@ -8,20 +8,39 @@ pipeline {
             }
         }
 
-
-        stage('Build') {
+        stage('Test Setup') {
             steps {
                 script {
-                    // Install dependencies
+                    // Change directory to the root of the project
+                    bat "cd ${WORKSPACE}/flask_number_check"  // Update the path accordingly
+
+                    // Activate the virtual environment
+                    bat 'venv\\Scripts\\activate'
+                    
+                    // Install dependencies, including flask_number_check
                     bat 'pip install -r requirements.txt'
+                    bat 'pip show -v flask_number_check'
+                    bat 'echo %PATH%'
                 }
             }
         }
 
-        stage('Run Tests') {
+        stage('Build') {
             steps {
                 script {
-                    // Run the tests
+                    // Install dependencies (if needed)
+                    // bat 'pip install -r requirements.txt'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    // Change directory to the root of the project
+                    bat "cd ${WORKSPACE}/flask_number_check"  // Update the path accordingly
+
+                    // Run tests
                     bat 'pytest'
                 }
             }
