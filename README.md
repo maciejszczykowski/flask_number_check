@@ -18,6 +18,8 @@ pytest
 To run virtual environment use: 
 After finishing: deactivate
 
+27.11.2023 - Pytest dziala bez env, jenkins dziala front+back, wlacza aplikacje w tle. Zey puscic testy w VSC trzeba najpierw odpalic aplikacje
+
 wszytkie dependencies na virtualnym .venv musza byc
 pytest, python, pluggy, selenium, flask
 aby sprawdzic: pip show selenium
