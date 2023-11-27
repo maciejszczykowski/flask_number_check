@@ -9,19 +9,38 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                script {
-                    // Set the working directory to the location of your tests
-                    dir('C:\\Users\\macie\\Desktop\\Maciek\\Dev\\Lotto\\flask_number_check') {
-                        // Print Python path for debugging
-                        bat 'python -c "import sys; print(sys.path)"'
+        stage('Run App and Tests') {
+            parallel {
+                stage('Run App') {
+                    steps {
+                        script {
+                            // Set the working directory to the location of your app
+                            dir('C:\\Users\\macie\\Desktop\\Maciek\\Dev\\Lotto\\flask_number_check') {
+                                // Print Python path for debugging
+                                bat 'python -c "import sys; print(sys.path)"'
 
-                        // Install dependencies
-                        bat 'pip install -r requirements.txt'
+                                // Install dependencies
+                                bat 'pip install -r requirements.txt'
 
-                        // Run the tests
-                        bat 'pytest'
+                                // Run the Flask app in the background
+                                bat 'start python app.py'
+                            }
+                        }
+                    }
+                }
+
+                stage('Run Tests') {
+                    steps {
+                        script {
+                            // Set the working directory to the location of your tests
+                            dir('C:\\Users\\macie\\Desktop\\Maciek\\Dev\\Lotto\\flask_number_check') {
+                                // Install dependencies
+                                bat 'pip install -r requirements.txt'
+
+                                // Run the tests
+                                bat 'pytest'
+                            }
+                        }
                     }
                 }
             }
