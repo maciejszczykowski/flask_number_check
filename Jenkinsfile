@@ -37,7 +37,7 @@ pipeline {
                                 // Install dependencies
                                 bat 'pip install -r requirements.txt'
 
-                                // Run the tests
+                                // Run the tests.
                                 bat 'pytest'
                             }
                         }
