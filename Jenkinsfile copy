@@ -45,16 +45,5 @@ pipeline {
                 }
             }
         }
-
-        stage('SonarQube Analysis') {
-            steps {
-                script {
-                    // Invoke SonarQube Scanner
-                    withSonarQubeEnv('Sonarqube1') {
-                        bat 'sonar-scanner'
-                    }
-                }
-            }
-        }
     }
 }
