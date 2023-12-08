@@ -47,11 +47,11 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-            steps {
-                script {
-                    // Invoke SonarQube Scanner
-                    withSonarQubeEnv('Sonarqube1') {
-                        bat 'sonar-scanner'
+    steps {
+        script {
+            // Invoke SonarQube Scanner with user token
+            withSonarQubeEnv('Sonarqube1') {
+                bat 'sonar-scanner -D"sonar.login=squ_442a62d9e835ab1c3d8a3735715191051db923a6"'
                     }
                 }
             }
