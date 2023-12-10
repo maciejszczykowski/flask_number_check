@@ -12,7 +12,7 @@ To run virtual environment use: .\venv\Scripts\Activate
 After finishing: deactivate
 
 27.11.2023 - Pytest dziala bez $env, jenkins dziala front+back, wlacza aplikacje w tle. Zey puscic testy w VSC trzeba najpierw odpalic aplikacje.
-06.12.2023 - Sonarqube - Turn on sonarqube, run cmd from project location cd C:\Users\macie\Desktop\Maciek\Dev\Lotto\flask_number_check
+06.12.2023 - Sonarqube - Turn on sonarqube locally, run cmd from project location cd C:\Users\macie\Desktop\Maciek\Dev\Lotto\flask_number_check
 sonar-scanner.bat -D"sonar.projectKey=maciejszczykowski_flask_number_check_AYw0yvaGT7BuMOktAZzY" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_a4591d465b5af2ed385f1f478002759c69f19990"
 
 wszytkie dependencies na virtualnym .venv musza byc
