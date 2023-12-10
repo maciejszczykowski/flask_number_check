@@ -20,10 +20,3 @@ pytest, python, pluggy, selenium, flask
 aby sprawdzic: pip show selenium
 aby zainstalowac: pip install selenium
 __init__.py dodac plik aby testy uruchamiac bez $env:...
-
-Folders:
-Lotto/flask_number_check/static/css/style.css
-Lotto/flask_number_check/templates/index.html
-Lotto/flask_number_check/app.py
-Lotto/flask_number_check/tests/test_444 and test_app.py and test_frontend.py
-Lotto/flask_number_check/drivers/
