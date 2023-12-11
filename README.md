@@ -3,7 +3,7 @@ How it works: After entering a number on html frontend, python backend is asking
 
 To run project: python app.py
 
-Stack: VSC/Python/Flask/Html/Css/Postrgrsql/Git/Pytest/Selenium/Webdriver/Jenkins/Groovy/Sonarqube/SonarScanner/
+Stack: VSC/Python/Flask/Html/Css/Postrgrsql/Git/Pytest/Selenium/Webdriver/Jenkins/Groovy/Sonarqube/SonarScanner/Ngrok/Webhooks/
 
 To run unit tests (Pytest): $env:PYTHONPATH = "C:\Users\macie\Desktop\Maciek\Dev\Lotto"
 pytest
