@@ -15,10 +15,18 @@ After finishing: deactivate
 06.12.2023 - Sonarqube - Turn on sonarqube locally, run cmd from project location cd C:\Users\macie\Desktop\Maciek\Dev\Lotto\flask_number_check
 sonar-scanner.bat -D"sonar.projectKey=maciejszczykowski_flask_number_check_AYw0yvaGT7BuMOktAZzY" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_a4591d465b5af2ed385f1f478002759c69f19990"
 
+Ngrok URL domain for Jenkins:  https://beetle-prepared-rodent.ngrok-free.app
+To start ngrok from cmd: 
+cd C:\Program Files\Ngrok-v3-stable-windows: 
+ngrok http 8080 --domain beetle-prepared-rodent.ngrok-free.app
+
 wszytkie dependencies na virtualnym .venv musza byc
 pytest, python, pluggy, selenium, flask
 aby sprawdzic: pip show selenium
 aby zainstalowac: pip install selenium
 __init__.py dodac plik aby testy uruchamiac bez $env:...
 
-Test pull request
+
+Sequence: 
+1. Start Sonarqube
+2. Start Ngrok
