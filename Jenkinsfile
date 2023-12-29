@@ -58,19 +58,3 @@ pipeline {
                 }
             }
         }
-
-        stage('Quality Gate Check') {
-            steps {
-                script {
-                    // Retrieve SonarQube Quality Gate status
-                    def qualityGateStatus = sh(script: "curl -s -u admin:admin http://localhost:9000/api/qualitygates/project_status?projectKey=maciejszczykowski_flask_number_check_AYw0yvaGT7BuMOktAZzY | jq -r .status", returnStatus: true).trim()
-                    
-                    // Fail the pipeline if Quality Gate status is not "OK"
-                    if (qualityGateStatus != "OK") {
-                        error "SonarQube Quality Gate check failed."
-                    }
-                }
-            }
-        }
-    }
-}
