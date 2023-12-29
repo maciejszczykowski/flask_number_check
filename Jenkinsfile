@@ -52,7 +52,7 @@ pipeline {
             // Invoke SonarQube Scanner with user token from Github App settings and token generated in sonarqube
             // 7 January token will expire in sonarqube administration/security/
             withSonarQubeEnv('Sonarqube1') {
-                bat 'sonar-scanner -D"sonar.login=squ_442a62d9e835ab1c3d8a3735715191051db923a6"'
+                bat 'sonar-scanner -D"sonar.login=squ_617281ed857d09b665beed83a81c0b41dae23642"'
                     }
                 }
             }
