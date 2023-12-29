@@ -11,6 +11,6 @@ def client():
 
 def test_check_number_in_db(client):
     # Assuming you have a test database set up for testing purposes
-    # Ensure this test database is configured in your app or modify the test accordingly
+    # Ensure this test database is configured in app or modify the test accordingly
     result = check_number_in_db('44444444')
     assert result == "Congratulations! You win!"
