@@ -50,7 +50,7 @@ pipeline {
             steps {
                 script {
                     // Invoke SonarQube Scanner with user token from Github App settings and token generated in sonarqube
-                    // Sonarqube1 is also connected to jenkins settings
+                    // Sonarqube1 is also used in jenkins settings (sonar user token) and sonar project token is used here and in sonar-project.properties file
                     // Token below has no expiry date.
                     withSonarQubeEnv('Sonarqube1') {
                         bat 'sonar-scanner -D"sonar.projectKey=maciejszczykowski_flask_number_check_AYw0yvaGT7BuMOktAZzY" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=sqp_505bb2a1b7b9316152b2a7798f1110af5923c7b4"'
@@ -58,5 +58,20 @@ pipeline {
                 }
             }
         }
+
+        stage('Quality Gate') {
+            steps {
+                // Wait for the quality gate status with a maximum timeout of 5 minutes
+                timeout(time: 5, unit: 'MINUTES') {
+                    script {
+                        // Check the quality gate status and abort the pipeline if it's not OK
+                        def qg = waitForQualityGate()
+                        if (qg.status != 'OK') {
+                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                        }
+                    }
+                }
+            }
+        }
     }
-}    
+}
