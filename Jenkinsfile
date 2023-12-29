@@ -53,7 +53,7 @@ pipeline {
                     // Sonarqube1 is also connected to jenkins settings
                     // Token below has no expiry date.
                     withSonarQubeEnv('Sonarqube1') {
-                        bat 'sonar-scanner -D"sonar.projectKey=maciejszczykowski_flask_number_check_AYw0yvaGT7BuMOktAZzY" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=ssqu_617281ed857d09b665beed83a81c0b41dae23642"'
+                        bat 'sonar-scanner -D"sonar.projectKey=maciejszczykowski_flask_number_check_AYw0yvaGT7BuMOktAZzY" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=sqp_505bb2a1b7b9316152b2a7798f1110af5923c7b4"'
                     }
                 }
             }
