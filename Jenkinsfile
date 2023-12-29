@@ -47,16 +47,14 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-    steps {
-        script {
-            // Invoke SonarQube Scanner with user token from Github App settings and token generated in sonarqube
-            // Sonarqube1 is also connected to jenkins settings
-            // Token below has no expiry date
-            withSonarQubeEnv('Sonarqube1') {
-                bat 'sonar-scanner -D"sonar.login=squ_617281ed857d09b665beed83a81c0b41dae23642"'
+            steps {
+                script {
+                    // Invoke SonarQube Scanner with user token from Github App settings and token generated in sonarqube
+                    // Sonarqube1 is also connected to jenkins settings
+                    // Token below has no expiry date
+                    withSonarQubeEnv('Sonarqube1') {
+                        bat 'sonar-scanner -D"sonar.projectKey=maciejszczykowski_flask_number_check_AYw0yvaGT7BuMOktAZzY" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=ssqu_617281ed857d09b665beed83a81c0b41dae23642"'
                     }
                 }
             }
         }
-    }
-}
