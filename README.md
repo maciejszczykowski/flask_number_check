@@ -40,3 +40,5 @@ pytest, python, pluggy, selenium, flask
 aby sprawdzic: pip show selenium
 aby zainstalowac: pip install selenium
 __init__.py dodac plik aby testy uruchamiac bez $env:...
+
+Qualitygate step: need to add webhook in sonarqube

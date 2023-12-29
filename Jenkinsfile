@@ -65,6 +65,7 @@ pipeline {
                 timeout(time: 5, unit: 'MINUTES') {
                     script {
                         // Check the quality gate status and abort the pipeline if it's not OK
+                        // webhook is needed in Sonarqube to check the qualitygate
                         def qg = waitForQualityGate()
                         if (qg.status != 'OK') {
                             error "Pipeline aborted due to quality gate failure: ${qg.status}"
