@@ -13,3 +13,6 @@ __init__.py dodac plik aby testy uruchamiac bez $env:...
 
 Qualitygate step: need to add webhook in sonarqube...
 
+
+Ngrok: Ngrok: https://dashboard.ngrok.com/cloud-edge/endpoints
+Login: via Github

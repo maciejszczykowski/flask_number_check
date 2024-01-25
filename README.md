@@ -11,21 +11,24 @@ After finishing: deactivate
 
 SEQUENCE: 
 
-1. Start Sonarqube
+1. Start Sonarqube from pulpit
 Sonarqube locally runs on:  http://localhost:9000/
 
-2. Start Ngrok
-To start ngrok from cmd: 
+2. Start Ngrok from cmd 
 cd C:\Program Files\Ngrok-v3-stable-windows
 ngrok http 8080 --domain beetle-prepared-rodent.ngrok-free.app
-ngrok URL domain for Jenkins purpose:  https://beetle-prepared-rodent.ngrok-free.app
-Ngrok: https://dashboard.ngrok.com/get-started/your-authtoken
+
+Jenkins runs online on: https://beetle-prepared-rodent.ngrok-free.app
+Jenkins runs on premise on: http://localhost:8080/
+
 
 3. Commit and push to main branch. Jenkins runs automaticaly 
 
-4. Open Jenkins
-Jenkins locally runs on: http://localhost:8080/ or https://beetle-prepared-rodent.ngrok-free.app
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 VM: Virtualbox/Ubuntu
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Docker
