@@ -21,7 +21,7 @@ ngrok http 8080 --domain beetle-prepared-rodent.ngrok-free.app
 ngrok URL domain for Jenkins purpose:  https://beetle-prepared-rodent.ngrok-free.app
 Ngrok: https://dashboard.ngrok.com/get-started/your-authtoken
 
-3. Commit to main branch. Jenkins runs automaticaly 
+3. Commit and push to main branch. Jenkins runs automaticaly 
 
 4. Open Jenkins
 Jenkins locally runs on: http://localhost:8080/ or https://beetle-prepared-rodent.ngrok-free.app
