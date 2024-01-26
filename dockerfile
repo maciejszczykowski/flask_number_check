@@ -8,17 +8,15 @@ ENV PYTHONUNBUFFERED 1
 # Set the working directory
 WORKDIR /app
 
-# Copy the requirements file and install dependencies
-COPY requirements.txt .
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# Copy the entire app folder
+COPY . .
 
-# Copy the application files
-COPY app.py .
-COPY templates templates
-COPY static static
+# Install dependencies
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Expose the port the app runs on
 EXPOSE 5000
 
 # Command to run the application
-CMD ["python", "app.py"]
+CMD ["python", "app.py", "--host", "0.0.0.0"]
+
