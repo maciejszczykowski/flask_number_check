@@ -10,6 +10,8 @@ db_params = {
     'user': 'postgres',
     'password': 'Norw1ch!po',
     'host': 'localhost',
+    
+
 }
 
 @app.route('/', methods=['GET', 'POST'])
@@ -35,5 +37,6 @@ def check_number_in_db(number):
     conn.close()
     return result
 
+# Explicitly set the host to 0.0.0.0 for Docker compatibility
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
