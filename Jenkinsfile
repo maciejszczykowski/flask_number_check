@@ -75,23 +75,3 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    // Use the access token to authenticate with Docker Hub
-                    withCredentials([string(credentialsId: 'maciek-dockerhub', variable: 'DOCKER_ACCESS_TOKEN')]) {
-                        // Set your Docker Hub username and repository name
-                        def dockerHubUsername = 'dockermacdaw'
-                        def repoName = 'flask_number_check_docker_hub'
-
-                        // Build the Docker image
-                        bat "docker build -t ${dockerHubUsername}/${repoName}:latest ."
-
-                        // Push the Docker image to Docker Hub.
-                        bat "docker push ${dockerHubUsername}/${repoName}:latest"
-                    }
-                }
-            }
-        }
-    }
-}
