@@ -10,6 +10,12 @@ db_params = {
     'user': 'postgres',
     'password': 'Norw1ch!po',
     'host': 'localhost',
+    
+    # Docker DB configuration
+    #'database': 'Lottery_DB',
+    #'user': 'postgres',
+    #'password': 'Norw1ch!po',
+    #'host': 'localhost',
 }
 
 @app.route('/', methods=['GET', 'POST'])
