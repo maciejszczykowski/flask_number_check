@@ -1,5 +1,6 @@
 # Test to check the DB Connection. Function sends a GET request to URL and asserts that the response is code 200
 
+from typing import Any
 import pytest
 from flask_number_check.app import app
 
@@ -9,6 +10,6 @@ def client():
     with app.test_client() as client:
         yield client
 
-def test_db_connection(client):
+def test_db_connection(client: Any):
     response = client.get('/')
     assert response.status_code == 200

@@ -11,7 +11,6 @@ db_params = {
     'password': 'Norw1ch!po',
     'host': 'localhost',
     
-    # Docker DB configuration for now empty
 
 }
 
