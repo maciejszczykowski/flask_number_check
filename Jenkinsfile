@@ -90,7 +90,7 @@ pipeline {
                     // Tag the Docker image
                     bat "docker tag flask-number-check-docker-image:latest ${dockerHubUsername}/${repoName}:latest"
 
-                    // Push the Docker image to Docker Hub
+                    // Push the Docker image to Docker Hub.
                     bat "docker push ${dockerHubUsername}/${repoName}:latest"
                 }
             }
