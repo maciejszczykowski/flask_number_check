@@ -78,20 +78,18 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    // Login to Docker Hub using the credentials stored in Jenkins
-                    withCredentials([usernamePassword(credentialsId: 'maciek-dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                        bat "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                    // Use the access token to authenticate with Docker Hub
+                    withCredentials([string(credentialsId: 'dockerhub_jenkins', variable: 'DOCKER_ACCESS_TOKEN')]) {
+                        // Set your Docker Hub username and repository name
+                        def dockerHubUsername = 'dockermacdaw'
+                        def repoName = 'flask_number_check_docker_hub'
+
+                        // Build the Docker image
+                        bat "docker build -t ${dockerHubUsername}/${repoName}:latest ."
+
+                        // Push the Docker image to Docker Hub.
+                        bat "docker push ${dockerHubUsername}/${repoName}:latest"
                     }
-
-                    // Set your Docker Hub username and repository name
-                    def dockerHubUsername = 'dockermacdaw'
-                    def repoName = 'flask_number_check_docker_hub'
-
-                    // Tag the Docker image
-                    bat "docker tag flask-number-check-docker-image:latest ${dockerHubUsername}/${repoName}:latest"
-
-                    // Push the Docker image to Docker Hub.
-                    bat "docker push ${dockerHubUsername}/${repoName}:latest"
                 }
             }
         }
