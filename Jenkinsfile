@@ -79,7 +79,7 @@ pipeline {
             steps {
                 script {
                     // Use the access token to authenticate with Docker Hub
-                    withCredentials([string(credentialsId: 'dockerhub_jenkins', variable: 'DOCKER_ACCESS_TOKEN')]) {
+                    withCredentials([string(credentialsId: 'maciek-dockerhub', variable: 'DOCKER_ACCESS_TOKEN')]) {
                         // Set your Docker Hub username and repository name
                         def dockerHubUsername = 'dockermacdaw'
                         def repoName = 'flask_number_check_docker_hub'
