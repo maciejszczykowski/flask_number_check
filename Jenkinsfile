@@ -81,7 +81,7 @@ pipeline {
                     // Set the working directory to the location of your Dockerfile
                     dir('C:\\Users\\macie\\Desktop\\Maciek\\Dev\\Lotto\\flask_number_check') {
                         // Build and tag the Docker image
-                        bat 'docker build -t flask-number-check-docker-image:latest .'
+                        bat 'docker build -t dockermacdaw/flask-number-check-docker-image:latest .'
 
                         // Push the Docker image to Docker Hub
                         bat 'docker push dockermacdaw/flask-number-check-docker-image:latest'
