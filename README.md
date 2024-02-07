@@ -21,8 +21,9 @@ ngrok http 8080 --domain beetle-prepared-rodent.ngrok-free.app
 Jenkins runs online on: https://beetle-prepared-rodent.ngrok-free.app
 Jenkins runs on premise on: http://localhost:8080/
 
+3. Start Docker Desktop from pulpit
 
-3. Commit and push to main branch. Jenkins runs automaticaly 
+4. Commit and push to main branch. Jenkins runs automaticaly 
 
 
 
