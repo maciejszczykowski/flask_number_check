@@ -6,7 +6,7 @@ body, h1, form, label, input, button, p {
 
 /* Apply a background color to the entire page */
 body {
-    background-color: #e9aaaa;
+    background-color: #db9393;
     font-family: Arial, sans-serif;
 }
 
@@ -44,7 +44,7 @@ input {
 
 /* Style the submit button */
 button {
-    background-color: #007BFF;
+    background-color: #1624e6e1;
     color: #fff;
     border: none;
     padding: 10px 20px;
