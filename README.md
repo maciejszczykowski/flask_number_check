@@ -4,6 +4,7 @@ How it works: After entering a number on frontend, python backend is asking DB i
 Stack and tools: VSC/Python/Flask/Html/Css/Postrgrsql/Git/Pytest/JavaJDK-17/Selenium/Webdriver/Jenkins/Groovy/Sonarqube/SonarScanner/Ngrok/Webhooks/Docker
 
 To run project locally on VSC: python app.py
+PS C:\Users\macie\Desktop\Maciek\Dev\Lotto\flask_number_check> python app.py
 To run unit tests (Pytest) locally on VSC app must be first started: pytest 
 
 To run virtual environment: .\venv\Scripts\Activate
