@@ -24,7 +24,7 @@ Jenkins runs on premise on: http://localhost:8080/
 
 3. Start Docker Desktop from pulpit
 
-4. Commit and push to main branch. Jenkins runs automaticaly 
+4. Commit and push to main branch. Jenkins runs automaticaly. 
 
 
 
